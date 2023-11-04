@@ -1,9 +1,10 @@
 import { interval } from "rxjs";
-import { map } from 'rxjs/operators'
+import { filter, map } from 'rxjs/operators'
 
 const stream$ = interval(1000)
     .pipe(
-        map((v)=>v*3)
+        map((v)=>v*3),
+        filter(v=> v%2==0 )
     )
 
 stream$.subscribe({
