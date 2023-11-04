@@ -1,4 +1,4 @@
-import { of, from, Observable, fromEvent, interval, timer } from 'rxjs'
+import { of, from, Observable, fromEvent, interval, timer, range } from 'rxjs'
 import { map, scan } from 'rxjs/operators'
 
 // const stream$ = of(1,2,3,4)
@@ -67,4 +67,6 @@ import { map, scan } from 'rxjs/operators'
 
 // setTimeout(()=>sub.unsubscribe(), 5000)
 
-timer(2500).subscribe(v=>console.log(v)) // тот же самый setTimeout, но который создает стрим
+// timer(2500).subscribe(v=>console.log(v)) // тот же самый setTimeout, но который создает стрим
+
+range(42, 10).subscribe(v=>console.log(v))
