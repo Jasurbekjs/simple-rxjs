@@ -1,4 +1,4 @@
-import { of, from, Observable, fromEvent, interval } from 'rxjs'
+import { of, from, Observable, fromEvent, interval, timer } from 'rxjs'
 import { map, scan } from 'rxjs/operators'
 
 // const stream$ = of(1,2,3,4)
@@ -63,6 +63,8 @@ import { map, scan } from 'rxjs/operators'
 //     canvas.clearRect(0, 0, canvasTag.width, canvasTag.height)
 // })
 
-const sub = interval(500).subscribe(v=>console.log(v))
+// const sub = interval(500).subscribe(v=>console.log(v))
 
-setTimeout(()=>sub.unsubscribe(), 5000)
+// setTimeout(()=>sub.unsubscribe(), 5000)
+
+timer(2500).subscribe(v=>console.log(v)) // тот же самый setTimeout, но который создает стрим
